@@ -2,8 +2,8 @@ version: 2
 
 sources:
 
-  - name: google_sheets # name of the source 
-    schema: google_sheets # this is the schema our raw data lives in
+  - name: sql_server_dbo # name of the source 
+    schema: sql_server_dbo # this is the schema our raw data lives in
     database: ALUMNO28_DEV_BRONZE_DB # this is the name of our database
 
     quoting:
@@ -11,17 +11,17 @@ sources:
       schema: false
       identifier: false
 
-    freshness:
-      warn_after: {count: 24, period: hour}
-      error_after: {count: 48, period: hour}
-
+      # freshness:
+      # warn_after: {count: 24, period: hour}
+      # error_after: {count: 48, period: hour} 
+    
     tables:
 
-      - name: budget
+      - name: order_items
         loaded_at_field: _fivetran_synced
         columns:
-          - name: _row
+          - name: order_id
           - name: product_id
           - name: quantity
-          - name: month
+          - name: _fivetran_deleted
           - name: _fivetran_synced
