@@ -21,7 +21,11 @@ sources:
         loaded_at_field: _fivetran_synced
         columns:
           - name: product_id
+            tests: 
+              - unique           
           - name: price
+            tests: 
+              - positive_values
           - name: name
           - name: inventory
           - name: _fivetran_deleted
