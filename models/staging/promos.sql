@@ -19,3 +19,9 @@ renamed_casted AS (
         )
 
 SELECT * FROM renamed_casted
+ union all
+ SELECT
+ '' as promo_id
+        , 0 as discount
+        , 'active' as status
+        , sysdate() AS date_load
