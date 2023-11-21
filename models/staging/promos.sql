@@ -25,7 +25,7 @@ SELECT * FROM renamed_casted
 UNION ALL
 SELECT
     '999' AS id_promo,
-    '' as desc_promo,
+    '' AS desc_promo,
     0 AS discount,
     'active' AS status,
     sysdate() AS date_load
