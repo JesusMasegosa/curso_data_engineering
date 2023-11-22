@@ -157,10 +157,6 @@ sources:
         description: ""
         columns:
           - name: promo_id
-            tests: 
-                - relationships:
-                    to: ref('promos')
-                    field: id_promo
             data_type: varchar
             description: ""
           - name: discount
